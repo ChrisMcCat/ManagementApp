@@ -1,0 +1,15 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="TrainerManager" transaction-type="JTA">
+        <jta-data-source>java:ds/TrainerManagerDB</jta-data-source>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.connection.characterEncoding" value="UTF-8"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.SingletonEhCacheProvider"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>
