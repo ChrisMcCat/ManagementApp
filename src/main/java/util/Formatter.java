@@ -20,7 +20,10 @@ public class Formatter {
 		return builder.build();
 	}
 
-	public static String eventIdToJson(String id, long id1) {
-		return null;
+	public static JsonObject eventIdToJson(long id) {
+		JsonObjectBuilder builder = Json.createObjectBuilder();
+
+		builder.add("id", id);
+		return builder.build();
 	}
 }

@@ -19,13 +19,13 @@ public class Tracking {
 	@Path("event")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public String createNewEventFromJson(JsonObject json) {
+	public JsonObject createNewEventFromJson(JsonObject json) {
 		String ip = json.getString("ip");
 		String type = json.getString("type");
 		String link = json.getString("link");
 		LocalDateTime time = LocalDateTime.parse(json.getString("time"));
 		long id = eventService.addEvent(ip, type, link, time);
-		return Formatter.eventIdToJson("id", id);
+		return Formatter.eventIdToJson(id);
 	}
 
 	@GET
