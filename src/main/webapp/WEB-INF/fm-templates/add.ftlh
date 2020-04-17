@@ -4,7 +4,7 @@
 </head>
 <body>
 <div style="text-align: center;">
-    <form name="loginForm" method="post" action="/add">
+    <form name="loginForm" method="post" action="/ManagementApp-1.0-SNAPSHOT/add">
         <br/><br/><br/>
         Name: <label>
             <input type="text" name="name"/>

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,6 +65,9 @@ public class TrainerAdd extends HttpServlet {
 
 		trainerDao.add(trainer);
 
-		response.sendRedirect("/list");
+//		response.sendRedirect("ManagementApp-1.0-SNAPSHOT/list");
+		PrintWriter writer = response.getWriter();
+		String responseString = "Name: " + name + "<br><br>Surname: " + surname + "<br><br>Phone number: " + phoneNumber + "<br><br>Mail: " + mail;
+		writer.println(responseString);
 	}
 }
