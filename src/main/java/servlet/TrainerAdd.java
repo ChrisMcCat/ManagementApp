@@ -65,9 +65,8 @@ public class TrainerAdd extends HttpServlet {
 
 		trainerDao.add(trainer);
 
-//		response.sendRedirect("ManagementApp-1.0-SNAPSHOT/list");
 		PrintWriter writer = response.getWriter();
-		String responseString = "Name: " + name + "<br><br>Surname: " + surname + "<br><br>Phone number: " + phoneNumber + "<br><br>Mail: " + mail;
+		String responseString = "Name: " + name + " Surname: " + surname + " Phone number: " + phoneNumber + " Mail: " + mail;
 		writer.println(responseString);
 	}
 }
