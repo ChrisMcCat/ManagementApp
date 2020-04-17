@@ -1,5 +1,6 @@
 package servlet;
 
+import dao.TrainerDao;
 import domain.Trainer;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -23,6 +24,9 @@ public class TrainerAdd extends HttpServlet {
 
 	@Inject
 	private TemplateProvider templateProvider;
+
+	@Inject
+	private TrainerDao trainerDao;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException {
@@ -57,6 +61,8 @@ public class TrainerAdd extends HttpServlet {
 		trainer.setMail(mail);
 
 		logger.info("Adding new trainer");
+
+		trainerDao.add(trainer);
 
 		response.sendRedirect("/list");
 	}
