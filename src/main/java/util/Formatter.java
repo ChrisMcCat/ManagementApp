@@ -19,4 +19,8 @@ public class Formatter {
 		builder.add("time", String.valueOf(time));
 		return builder.build();
 	}
+
+	public static String eventIdToJson(String id, long id1) {
+		return null;
+	}
 }
