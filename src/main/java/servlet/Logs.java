@@ -28,6 +28,7 @@ public class Logs extends HttpServlet {
 		Template template = templateProvider.getTemplate(getServletContext(), "add.ftlh");
 		Map<String, Object> model = new HashMap<>();
 
+
 		try {
 			template.process(model, response.getWriter());
 		} catch (TemplateException e) {
