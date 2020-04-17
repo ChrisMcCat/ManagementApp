@@ -1,6 +1,7 @@
 package domain;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "event")
@@ -21,7 +22,7 @@ public class Event {
 	private String link;
 
 	@Column(name = "time")
-	private String time;
+	private LocalDateTime time;
 
 	public Long getId() {
 		return id;
@@ -55,11 +56,11 @@ public class Event {
 		this.link = link;
 	}
 
-	public String getTime() {
+	public LocalDateTime getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(LocalDateTime time) {
 		this.time = time;
 	}
 }
