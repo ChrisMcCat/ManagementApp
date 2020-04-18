@@ -30,7 +30,7 @@ public class TrainerAdd extends HttpServlet {
 	private TrainerDao trainerDao;
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		Template template = templateProvider.getTemplate(getServletContext(), "add.ftlh");
 		Map<String, Object> model = new HashMap<>();
@@ -43,7 +43,7 @@ public class TrainerAdd extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
