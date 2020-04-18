@@ -32,7 +32,7 @@ public class TrainerEdit extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException {
 
-		Template template = templateProvider.getTemplate(getServletContext(), "add.ftlh");
+		Template template = templateProvider.getTemplate(getServletContext(), "edit.ftlh");
 		Map<String, Object> model = new HashMap<>();
 
 		try {
