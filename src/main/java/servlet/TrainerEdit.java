@@ -35,6 +35,7 @@ public class TrainerEdit extends HttpServlet {
 		Template template = templateProvider.getTemplate(getServletContext(), "edit.ftlh");
 		Map<String, Object> model = new HashMap<>();
 
+		//TODO dodac value do ftlh i podac stad jako model.put
 		try {
 			template.process(model, response.getWriter());
 		} catch (TemplateException e) {
