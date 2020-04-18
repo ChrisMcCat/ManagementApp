@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Formatter {
@@ -27,12 +26,12 @@ public class Formatter {
 		String ip = event.getIp();
 		String type = event.getType();
 		String link = event.getLink();
-		LocalDateTime time = event.getTime();
+		String time = event.getTime();
 		builder.add("id", String.valueOf(id));
 		builder.add("ip", ip);
 		builder.add("type", type);
 		builder.add("link", link);
-		builder.add("time", String.valueOf(time));
+		builder.add("time", time);
 		return builder.build();
 	}
 

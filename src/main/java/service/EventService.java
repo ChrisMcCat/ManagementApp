@@ -9,7 +9,6 @@ import util.Formatter;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.json.JsonObject;
-import java.time.LocalDateTime;
 
 @Stateless
 public class EventService {
@@ -21,7 +20,7 @@ public class EventService {
 	@Inject
 	private EventDao eventDao;
 
-	public long addEvent(String ip, String type, String link, LocalDateTime time) {
+	public long addEvent(String ip, String type, String link, String time) {
 		Event event = new Event();
 		event.setIp(ip);
 		event.setType(type);

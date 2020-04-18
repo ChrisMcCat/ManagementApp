@@ -27,4 +27,14 @@ public class EventDao {
 		final Query query = entityManager.createQuery("SELECT e FROM Event e");
 		return query.getResultList();
 	}
+
+	public long createNewEvent(String ip, String type, String link, String time) {
+		Event event = new Event();
+		event.setIp(ip);
+		event.setType(type);
+		event.setLink(link);
+		event.setTime(time);
+		this.entityManager.persist(event);
+		return event.getId();
+	}
 }
