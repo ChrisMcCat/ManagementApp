@@ -2,10 +2,12 @@ package servlet;
 
 import dao.TrainerDao;
 import domain.Trainer;
+import dto.TrainerDto;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import service.TrainerService;
 import util.TemplateProvider;
 
 import javax.inject.Inject;
@@ -29,8 +31,22 @@ public class TrainerEdit extends HttpServlet {
 	@Inject
 	private TrainerDao trainerDao;
 
+	@Inject
+	private TrainerService trainerService;
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+		String trainerID = request.getParameter("id");
+
+		if (trainerID == null || trainerID.isEmpty()) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return;
+		}
+
+		long id = Long.parseLong(trainerID);
+
+		TrainerDto trainerDto = trainerService.findById(id);
 
 		Template template = templateProvider.getTemplate(getServletContext(), "edit.ftlh");
 		Map<String, Object> model = new HashMap<>();
@@ -44,7 +60,7 @@ public class TrainerEdit extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
