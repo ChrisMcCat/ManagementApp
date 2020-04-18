@@ -3,6 +3,7 @@ package service;
 import dao.TrainerDao;
 import domain.Trainer;
 import dto.TrainerDto;
+import mapper.TrainerMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
